@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+header {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+.option {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.option button {
+    padding: 0.75rem 1.5rem;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.option button:hover {
+    background-color: #1e40af;
+}
+
+.section {
+    display: none;
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.section h2 {
+    margin-top: 0;
+    color: #1e3a8a;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"] {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button {
+    margin-top: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1e40af;
+}
+
+#password-strength {
+    font-weight: bold;
+}
+
+#account-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+#account-list li {
+    margin-bottom: 1rem;
+    background: #f9fafb;
+    border-left: 4px solid #3b82f6;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    position: relative;
+}
+
+.account-details {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.account-details span {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+button.delete-btn {
+    background-color: #dc2626;
+    position: relative;
+    margin-left: 0.5rem;
+}
+
+button.delete-btn:hover {
+    background-color: #b91c1c;
+}
+
+/* Inline validation */
+.input-error {
+    border: 2px solid red !important;
+    animation: shake 0.2s ease-in-out 2;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-4px);
+    }
+
+    50% {
+        transform: translateX(4px);
+    }
+
+    75% {
+        transform: translateX(-4px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input[type="password"],
+.password-wrapper input[type="text"] {
+    width: 100%;
+    padding-right: 2.5rem;
+    padding-left: 0.6rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+.toggle-password {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0.75rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    font-size: 1.1rem;
+    color: #444;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.toggle-password:hover {
+    color: #2563eb;
+    background: transparent;
+    transform: scale(1.1);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.toggle-password i {
+    transform: translateY(1px);
+}
+
+
+.generator-options {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #f0f4ff;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+}
+
+.generator-options label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.generator-options input[type="number"] {
+    width: 60px;
+    margin-left: 0.5rem;
+    padding: 0.3rem;
+    font-size: 0.95rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.option {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.option button,
+button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"],
+.password-wrapper input[type="text"],
+.password-wrapper input[type="password"] {
+    height: 42px;
+    padding: 0 0.6rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

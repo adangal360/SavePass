@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        SavePass - Password Manager
+    </title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <h1>
+            SavePass - Password Manager
+        </h1>
+    </header>
+    <main>
+        <div class="option">
+            <button onclick="showAddSection()">
+                Add Account
+            </button>
+            <button onclick="showManageSection()">
+                Manage Accounts
+            </button>
+        </div>
+        <section class="section" id="add-account">
+            <h2>
+                Add Account
+            </h2>
+            <div>
+                <label for="tag">
+                    Tag:
+                </label>
+                <input id="tag" placeholder="e.g. personal, school" type="text" />
+            </div>
+            <label>
+                Application:
+            </label>
+            <input id="application" type="text" />
+            <label>
+                Username:
+            </label>
+            <input id="username" type="text" />
+            <label>
+                Password:
+            </label>
+            <div class="password-wrapper">
+                <input id="password" oninput="checkPasswordStrength()" type="password" />
+                <button class="toggle-password" onclick="togglePasswordVisibility()" type="button">
+                    <i class="fas fa-eye">
+                    </i>
+                </button>
+            </div>
+            <span id="password-strength">
+            </span>
+            <div class="generator-options" id="generator-settings" style="display:none;">
+                <label>
+                    Password Length:
+                    <input id="password-length" max="32" min="8" type="number" value="12" />
+                </label>
+                <label>
+                    <input checked="" id="include-uppercase" type="checkbox" />
+                    Include Uppercase
+                </label>
+                <label>
+                    <input checked="" id="include-numbers" type="checkbox" />
+                    Include Numbers
+                </label>
+                <label>
+                    <input checked="" id="include-symbols" type="checkbox" />
+                    Include Symbols
+                </label>
+            </div>
+            <div class="button-group">
+                <button onclick="Storage.saveAccount()">
+                    Save Account
+                </button>
+                <button onclick="toggleGeneratorOptions()">
+                    Generate Password
+                </button>
+            </div>
+        </section>
+        <section class="section" id="manage-accounts" style="display:none;">
+            <h2>
+                Manage Accounts
+            </h2>
+            <div class="tag-filter">
+                <label for="tag-filter">
+                    Filter by Tag:
+                </label>
+                <select id="tag-filter" onchange="Storage.filterByTag()">
+                    <option value="all">
+                        All
+                    </option>
+                </select>
+            </div>
+            <ul id="account-list">
+            </ul>
+            <div class="generator-options" id="generator-settings" style="display:none;">
+                <label>
+                    Password Length:
+                    <input id="password-length" max="32" min="8" type="number" value="12" />
+                </label>
+                <label>
+                    <input checked="" id="include-uppercase" type="checkbox" />
+                    Include Uppercase
+                </label>
+                <label>
+                    <input checked="" id="include-numbers" type="checkbox" />
+                    Include Numbers
+                </label>
+                <label>
+                    <input checked="" id="include-symbols" type="checkbox" />
+                    Include Symbols
+                </label>
+            </div>
+            <div class="manage-utilities">
+                <button onclick="Storage.exportToJSON()">
+                    Export to JSON
+                </button>
+                <input id="json-input" onchange="Storage.importFromJSON(event)" type="file" />
+            </div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js">
+    </script>
+    <script src="crypto.js">
+    </script>
+    <script src="generator.js">
+    </script>
+    <script src="storage.js">
+    </script>
+    <script src="app.js">
+    </script>
+</body>
+
+</html>
